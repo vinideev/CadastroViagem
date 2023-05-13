@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Montserrat:wght@300&family=Rubik:wght@300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+header {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  background-color: #001800;
+}
+
+header img {
+  width: 80px;
+  margin-left: 20px;
+}
+
+.main{
+  background-color: #ffcd5b;
+  color: #001800;
+  display: flex;
+  font-weight: bold; 
+}
+
+.info-main{
+  width: 60%;
+  text-align: center;
+  margin-top: 110px;
+  padding: 10px;
+}
+
+.main img{
+  width: 550px;
+}
+
+.cadastro{
+  background-color: #001800;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  height: 500px;
+  width: 300px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;  
+  color: #f9ffa0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 14px;
+
+}
+
+button{
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.termos{
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-size: 12px;
+}
+
+.toggler {
+  width: 72px;
+  margin: 40px auto;
+}
+
+.toggler input {
+  display: none;
+}
+
+.toggler label {
+  display: block;
+  position: relative;
+  width: 62px;
+  height: 36px;
+  border: 1px solid #d6d6d6;
+  border-radius: 36px;
+  background: #e4e8e8;
+  cursor: pointer;
+}
+
+
+
+.toggler label::after {
+  display: block;
+  border-radius: 100%;
+  background-color: #ffcd5b;
+  content: '';
+  animation-name: toggler-size;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-out;
+  animation-direction: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+}
+
+.toggler label::after, .toggler label .toggler-on, .toggler label .toggler-off {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  width: 26px;
+  height: 26px;
+  transform: translateY(-50%) translateX(-50%);
+  transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked + label::after, .toggler input:checked + label .toggler-on, .toggler input:checked + label .toggler-off {
+  left: 75%;
+}
+
+.toggler input:checked + label::after {
+  background-color: #50ac5d;
+  animation-name: toggler-size2;
+}
+
+.toggler .toggler-on, .toggler .toggler-off {
+  opacity: 1;
+  z-index: 2;
+}
+
+.toggler input:checked + label .toggler-off, .toggler input:not(:checked) + label .toggler-on {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.toggler .path {
+  fill: none;
+  stroke: #fefefe;
+  stroke-width: 7px;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+}
+
+@keyframes toggler-size {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes toggler-size2 {
+  0%, 100% {
+    width: 26px;
+    height: 26px;
+  }
+
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+}
+ 
+
+.cta {
+  display: flex;
+  padding: 11px 33px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #004605;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  border: none;
+  width: 200px;
+  
+}
+
+.cta:focus {
+  outline: none;
+}
+
+.cta:hover {
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta .second {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+
+.cta:hover  .second {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+.span {
+  transform: skewX(15deg)
+}
+
+.second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover .three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: #FBC638;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+.cadastro:hover{
+  opacity: 100%;
+}
+
+.social-media img{
+  width: 40px;
+  padding: 5px;
+}
+
+.social-media{
+  display: flex;
+  justify-content: center;
+  width: 150px;  
+  margin: 0 auto;
+  border-radius: 10px;
+  
+}
